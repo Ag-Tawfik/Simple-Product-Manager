@@ -1,0 +1,15 @@
+{
+    "name": "jeffreyway/demo",
+    "authors": [
+        {
+            "name": "Jeffrey Way",
+            "email": "jeffrey@jeffrey-way.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
