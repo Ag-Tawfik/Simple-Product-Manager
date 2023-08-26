@@ -66,9 +66,9 @@
             <select name="productType" class="form-select" aria-label="select" id="productType"
               onchange="toggleFields(this.value)">
               <option selected disabled value="">Type Switcher</option>
-              <option value="DVD" <?= ($_POST['productType'] === 'DVD') ? 'selected' : '' ?>>DVD</option>
-              <option value="Book" <?= ($_POST['productType'] === 'Book') ? 'selected' : '' ?>>Book</option>
-              <option value="Furniture" <?= ($_POST['productType'] === 'Furniture') ? 'selected' : '' ?>>Furniture</option>
+              <option value="DVD" <?= (isset($_POST['productType']) && $_POST['productType'] === 'DVD') ? 'selected' : '' ?>>DVD</option>
+              <option value="Book" <?= (isset($_POST['productType']) && $_POST['productType'] === 'Book') ? 'selected' : '' ?>>Book</option>
+              <option value="Furniture" <?= (isset($_POST['productType']) && $_POST['productType'] === 'Furniture') ? 'selected' : '' ?>>Furniture</option>
             </select>
           </div>
         </div>
