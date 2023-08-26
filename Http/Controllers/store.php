@@ -1,21 +1,15 @@
 <?php
 
-use Core\App;
-use Core\Database;
+use Core\Validator;
 use Http\Classes\Book;
 use Http\Classes\DVDDisc;
 use Http\Classes\Furniture;
 
-$db = App::resolve(Database::class);
-$errors = [];
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $result = $db->query("SELECT * FROM products WHERE sku = :sku", [
-        'sku' => $_POST['sku'],
-    ])->get();
+    $isSkuUnique = Validator::unique($_POST['sku']);
 
-    if (count($result) > 0) {
+    if (!$isSkuUnique) {
         $errors['sku'] = 'SKU must be unique';
     }
 
