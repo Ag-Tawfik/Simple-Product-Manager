@@ -2,9 +2,6 @@
 
 namespace Http\Classes;
 
-use Core\App;
-use Core\Database;
-
 class DVDDisc extends Product
 {
     private $size;
@@ -25,22 +22,5 @@ class DVDDisc extends Product
         return [
             'Size' => $this->size . 'MB'
         ];
-    }
-
-    public function save()
-    {
-        $attributes = $this->getAttributes();
-
-        $jsonAttributes = json_encode($attributes);
-
-        $db = App::resolve(Database::class);
-
-        $db->query('INSERT INTO products(sku, name, price, type, attributes) VALUES(:sku, :name, :price, :type, :attributes)', [
-            'sku' => $this->getSku(),
-            'name' => $this->getName(),
-            'price' => $this->getPrice(),
-            'type' => $this->getType(),
-            'attributes' => $jsonAttributes
-        ]);
     }
 }

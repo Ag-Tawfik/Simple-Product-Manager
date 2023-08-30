@@ -2,6 +2,9 @@
 
 namespace Http\Classes;
 
+use Core\App;
+use Core\Database;
+
 abstract class Product
 {
     protected $sku;
@@ -32,5 +35,21 @@ abstract class Product
 
     abstract public function getType();
     abstract public function getAttributes();
-    abstract public function save();
+
+    public function save()
+    {
+        $attributes = $this->getAttributes();
+
+        $jsonAttributes = json_encode($attributes);
+
+        $db = App::resolve(Database::class);
+
+        $db->query('INSERT INTO products(sku, name, price, type, attributes) VALUES(:sku, :name, :price, :type, :attributes)', [
+            'sku' => $this->getSku(),
+            'name' => $this->getName(),
+            'price' => $this->getPrice(),
+            'type' => $this->getType(),
+            'attributes' => $jsonAttributes
+        ]);
+    }
 }
