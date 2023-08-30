@@ -2,8 +2,6 @@
 
 namespace Http\Classes;
 
-require_once 'Product.php';
-
 class Book extends Product
 {
     private $weight;

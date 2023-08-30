@@ -2,8 +2,6 @@
 
 namespace Http\Classes;
 
-require_once 'Product.php';
-
 class Furniture extends Product
 {
     private $height;
