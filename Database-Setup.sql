@@ -1,4 +1,4 @@
--- Create a MySQL database scandiweb and a table products
+-- Create a MySQL database product_crud_db and a table products
 
 CREATE TABLE `products` (
   `id` int NOT NULL AUTO_INCREMENT,
