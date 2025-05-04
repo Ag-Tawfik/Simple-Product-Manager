@@ -14,8 +14,8 @@ This project was created as a test assignment for Scandiweb.
 
 1.  **Clone the Repository:**
     ```bash
-    git clone <your-repository-url>
-    cd Products-CRUD
+    git clone https://github.com/Ag-Tawfik/Simple-Product-Manager.git
+    cd to the project folder
     ```
 
 2.  **Install Dependencies:**
