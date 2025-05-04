@@ -1,9 +1,9 @@
 {
-    "name": "jeffreyway/demo",
+    "name": "tawfikag/php-product-crud",
     "authors": [
         {
-            "name": "Jeffrey Way",
-            "email": "jeffrey@jeffrey-way.com"
+            "name": "Tawfik AG",
+            "email": "ag.taoufik@gmail.com"
         }
     ],
     "autoload": {
